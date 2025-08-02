@@ -1,0 +1,45 @@
+During a recent dinner with business leaders in San Francisco, a comment I made cast a chill over the room. I hadn’t asked my dining companions anything I considered to be extremely faux pas: simply whether they thought today’s AI could someday achieve human-like intelligence (i.e. AGI) or beyond.
+
+It’s a more controversial topic than you might think.
+
+In 2025, there’s no shortage of tech CEOs offering the bull case for how large language models (LLMs), which power chatbots like ChatGPT and Gemini, could attain human-level or even super-human intelligence over the near term. These executives argue that highly capable AI will bring about widespread — and widely distributed — societal benefits.
+
+For example, Dario Amodei, Anthropic’s CEO, wrote in an essay that exceptionally powerful AI could arrive as soon as 2026 and be “smarter than a Nobel Prize winner across most relevant fields.” Meanwhile, OpenAI CEO Sam Altman recently claimed his company knows how to build “superintelligent” AI, and predicted it may “massively accelerate scientific discovery.“
+
+However, not everyone finds these optimistic claims convincing.
+
+Other AI leaders are skeptical that today’s LLMs can reach AGI — much less superintelligence — barring some novel innovations. These leaders have historically kept a low profile, but more have begun to speak up recently.
+
+In a piece this month, Thomas Wolf, Hugging Face’s co-founder and chief science officer, called some parts of Amodei’s vision “wishful thinking at best.” Informed by his PhD research in statistical and quantum physics, Wolf thinks that Nobel Prize-level breakthroughs don’t come from answering known questions — something that AI excels at — but rather from asking questions no one has thought to ask.
+
+In Wolf’s opinion, today’s LLMs aren’t up to the task.
+
+“I would love to see this ‘Einstein model’ out there, but we need to dive into the details of how to get there,” Wolf told TechCrunch in an interview. “That’s where it starts to be interesting.”
+
+Wolf said he wrote the piece because he felt there was too much hype about AGI, and not enough serious evaluation of how to actually get there. He thinks that, as things stand, there’s a real possibility AI transforms the world in the near future, but doesn’t achieve human-level intelligence or superintelligence.
+
+Much of the AI world has become enraptured by the promise of AGI. Those who don’t believe it’s possible are often labeled as “anti-technology,” or otherwise bitter and misinformed.
+
+Some might peg Wolf as a pessimist for this view, but Wolf thinks of himself as an “informed optimist” — someone who wants to push AI forward without losing grasp of reality. Certainly, he isn’t the only AI leader with conservative predictions about the technology.
+
+Google DeepMind CEO Demis Hassabis has reportedly told staff that, in his opinion, the industry could be up to a decade away from developing AGI — noting there are a lot of tasks AI simply can’t do today. Meta Chief AI Scientist Yann LeCun has also expressed doubts about the potential of LLMs. Speaking at Nvidia GTC on Tuesday, LeCun said the idea that LLMs could achieve AGI was “nonsense,” and called for entirely new architectures to serve as bedrocks for superintelligence.
+
+Kenneth Stanley, a former OpenAI lead researcher, is one of the people digging into the details of how to build advanced AI with today’s models. He’s now an executive at Lila Sciences, a new startup that raised $200 million in venture capital to unlock scientific innovation via automated labs.
+
+Stanley spends his days trying to extract original, creative ideas from AI models, a subfield of AI research called open-endedness. Lila Sciences aims to create AI models that can automate the entire scientific process, including the very first step — arriving at really good questions and hypotheses that would ultimately lead to breakthroughs.
+
+“I kind of wish I had written [Wolf’s] essay, because it really reflects my feelings,” Stanley said in an interview with TechCrunch. “What [he] noticed was that being extremely knowledgeable and skilled did not necessarily lead to having really original ideas.”
+
+Stanley believes that creativity is a key step along the path to AGI, but notes that building a “creative” AI model is easier said than done.
+
+Optimists like Amodei point to methods such as AI “reasoning” models, which use more computing power to fact-check their work and correctly answer certain questions more consistently, as evidence that AGI isn’t terribly far away. Yet coming up with original ideas and questions may require a different kind of intelligence, Stanley says.
+
+“If you think about it, reasoning is almost antithetical to [creativity],” he added. “Reasoning models say, ‘Here’s the goal of the problem, let’s go directly towards that goal,’ which basically stops you from being opportunistic and seeing things outside of that goal, so that you can then diverge and have lots of creative ideas.”
+
+To design truly intelligent AI models, Stanley suggests we need to algorithmically replicate a human’s subjective taste for promising new ideas. Today’s AI models perform quite well in academic domains with clear-cut answers, such as math and programming. However, Stanley points out that it’s much harder to design an AI model for more subjective tasks that require creativity, which don’t necessarily have a “correct” answer.
+
+“People shy away from [subjectivity] in science — the word is almost toxic,” Stanley said. “But there’s nothing to prevent us from dealing with subjectivity [algorithmically]. It’s just part of the data stream.”
+
+Stanley says he’s glad that the field of open-endedness is getting more attention now, with dedicated research labs at Lila Sciences, Google DeepMind, and AI startup Sakana now working on the problem. He’s starting to see more people talk about creativity in AI, he says — but he thinks that there’s a lot more work to be done.
+
+Wolf and LeCun would probably agree. Call them the AI realists, if you will: AI leaders approaching AGI and superintelligence with serious, grounded questions about its feasibility. Their goal isn’t to poo-poo advances in the AI field. Rather, it’s to kick-start big-picture conversation about what’s standing between AI models today and AGI — and super-intelligence — and to go after those blockers.
