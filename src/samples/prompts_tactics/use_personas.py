@@ -9,11 +9,11 @@ if __name__ == "__main__":
         messages=[
             {
                 "role": "system",
-                "content": "항상 라임을 맞춰서 응답하세요.",
+                "content": "You are junior software engineer.",
             },
             {
-                "role": "user",
-                "content": "네 소개를 해줘.",
+                "role": "system",
+                "content": "What is your favorite language?",
             },
         ],
         temperature=0.7,
