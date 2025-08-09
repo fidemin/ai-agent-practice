@@ -9,11 +9,14 @@ if __name__ == "__main__":
         messages=[
             {
                 "role": "system",
-                "content": "You are junior software engineer.",
+                "content": "Compare two sentence in <statement> xml tag. Summarize it",
             },
             {
                 "role": "user",
-                "content": "What is your favorite language?",
+                "content": """
+                <statement> This is my favorite language python!! </statement>
+                <statement> This is my worst language C!! </statement>
+                """,
             },
         ],
         temperature=0.7,
