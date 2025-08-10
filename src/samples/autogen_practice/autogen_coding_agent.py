@@ -1,4 +1,4 @@
-from autogen import config_list_from_json, UserProxyAgent, AssistantAgent
+from autogen import config_list_from_json, UserProxyAgent, AssistantAgent, Cache
 
 
 def review_code(receiver, messages, sender, config):
@@ -67,9 +67,10 @@ if __name__ == "__main__":
     create simple python script print hello
     """
 
-    response = user_proxy_agent.initiate_chat(
-        recipient=engineer,
-        message=task,
-        max_turns=2,
-        summary_method="last_msg",
-    )
+    with Cache.disk(cache_seed=42) as cache:
+        response = user_proxy_agent.initiate_chat(
+            recipient=engineer,
+            message=task,
+            max_turns=2,
+            summary_method="last_msg",
+        )
