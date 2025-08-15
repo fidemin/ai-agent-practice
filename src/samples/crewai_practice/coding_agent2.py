@@ -7,8 +7,7 @@ from dotenv import load_dotenv
 if __name__ == "__main__":
     load_dotenv()
     base_url = os.getenv("OLLAMA_HOST", "http://localhost:11434")
-    # model = os.getenv("MODEL", "ollama/gpt-oss:20b")
-    model = os.getenv("MODEL", "ollama/llama3")
+    model = os.getenv("MODEL", "ollama/gpt-oss:20b")
 
     llm = LLM(
         model=model,
