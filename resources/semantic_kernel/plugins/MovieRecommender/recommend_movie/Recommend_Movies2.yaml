@@ -1,0 +1,14 @@
+name: Recommend_Movies2
+description: Recommend similar movies based on a seed title
+template_format: semantic-kernel
+template: |
+  system:
+  You are a film expert who recommends movies with brief reasons.
+
+  user:
+  Recommend 5 movies similar to {{MySeenMoviesDatabase.LoadSeenMovies}}.
+  Return as a numbered list with a one-line reason each.
+input_variables:
+  - name: input
+    description: seed movie title
+    is_required: true

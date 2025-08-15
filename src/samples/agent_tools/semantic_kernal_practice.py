@@ -5,7 +5,7 @@ from semantic_kernel.connectors.ai.ollama import (
     OllamaChatPromptExecutionSettings,
     OllamaChatCompletion,
 )
-from semantic_kernel.functions import KernelArguments
+from semantic_kernel.functions import KernelArguments, kernel_function
 from semantic_kernel.prompt_template import PromptTemplateConfig, InputVariable
 
 kernel = sk.Kernel()
@@ -17,14 +17,16 @@ chat = OllamaChatCompletion(
 kernel.add_service(chat)
 
 
-def get_recommend_prompt_config():
-    execution_settings = OllamaChatPromptExecutionSettings(
-        service_id="ollama-gpt",
-        ai_model_id="gpt-oss:20b",
-        max_tokens=5120,
-        temperature=0.7,
-    )
+class MySeenMoviesDatabase:
+    @kernel_function(name="LoadSeenMovies", description="load movie list already seen.")
+    def load_seen_movies(self) -> str:
+        with open("./resources/extra/seen_movies.txt") as f:
+            lines = [line.strip() for line in f.readlines() if line]
+            string = ", ".join(lines)
+        return string
 
+
+def get_recommend_prompt_config(execution_settings):
     prompt = """
     system:
     You have vast knowledge about everything.
@@ -67,23 +69,50 @@ def get_recommend_prompt_config():
 
 
 async def main():
-    prompt_template_config = get_recommend_prompt_config()
-    recommend_function = kernel.add_function(
-        prompt_template_config=prompt_template_config,
-        function_name="Recommend_Anything",
-        plugin_name="Recommendation",
+    kernel.add_plugin(
+        MySeenMoviesDatabase(),
+        "MySeenMoviesDatabase",
     )
 
-    recommendation = await kernel.invoke(
-        recommend_function,
-        KernelArguments(
-            subject="boxing",
-            format="movie",
-            genre="drama",
-            custom="Should be sad ending",
-        ),
+    execution_settings = OllamaChatPromptExecutionSettings(
+        service_id="ollama-gpt",
+        ai_model_id="gpt-oss:20b",
+        max_tokens=5120,
+        temperature=0.7,
     )
-    print(recommendation)
+
+    # prompt_template_config = get_recommend_prompt_config(execution_settings)
+    # recommend_function = kernel.add_function(
+    #     prompt_template_config=prompt_template_config,
+    #     function_name="Recommend_Anything",
+    #     plugin_name="Recommendation",
+    # )
+
+    plugin_dir = "./resources/semantic_kernel/plugins/MovieRecommender"
+    movie_recommender = kernel.add_plugin(
+        plugin_name="recommend_movie",
+        parent_directory=plugin_dir,
+    )
+
+    # recommendation = await kernel.invoke(
+    #     recommend_function,
+    #     KernelArguments(
+    #         subject="boxing",
+    #         format="movie",
+    #         genre="drama",
+    #         custom="Should be sad ending",
+    #     ),
+    # )
+    # print(recommendation)
+
+    recommendation_from_seen = await kernel.invoke(
+        movie_recommender[
+            "Recommend_Movies2"
+        ],  # Recommend_Movies2 function in movie_recommender plugin
+        KernelArguments(settings=execution_settings),
+    )
+
+    print(recommendation_from_seen)
 
 
 if __name__ == "__main__":
