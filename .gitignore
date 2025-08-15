@@ -215,3 +215,6 @@ __marimo__/
 
 # autogen
 config_list*.json
+
+# resources/created for created contents by ai
+resources/created
