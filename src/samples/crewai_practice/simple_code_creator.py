@@ -34,7 +34,6 @@ collection = client.get_or_create_collection(
 )
 
 # ---- CrewAI agents/tasks with memory ----
-# IMPORTANT: pass a memory_config so CrewAI won't try to init OpenAI embeddings.
 memory_config = {
     "provider": "chroma",
     "client": client,  # pass the client so it can reuse the same store
