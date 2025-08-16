@@ -41,6 +41,7 @@ dependencies = [
     { name = "langchain-ollama" },
     { name = "openai" },
     { name = "pygame" },
+    { name = "requests" },
     { name = "semantic-kernel", extra = ["ollama"] },
     { name = "sentence-transformers" },
 ]
@@ -56,6 +57,7 @@ requires-dist = [
     { name = "langchain-ollama", specifier = ">=0.3.6" },
     { name = "openai", specifier = ">=1.99.5" },
     { name = "pygame", specifier = ">=2.6.1" },
+    { name = "requests", specifier = ">=2.32.4" },
     { name = "semantic-kernel", extras = ["ollama"], specifier = ">=1.35.3" },
     { name = "sentence-transformers", specifier = ">=5.1.0" },
 ]

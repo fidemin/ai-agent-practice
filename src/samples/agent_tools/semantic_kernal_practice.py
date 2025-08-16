@@ -81,18 +81,13 @@ async def main():
         temperature=0.7,
     )
 
+    # # direct add function to kernel
     # prompt_template_config = get_recommend_prompt_config(execution_settings)
     # recommend_function = kernel.add_function(
     #     prompt_template_config=prompt_template_config,
     #     function_name="Recommend_Anything",
     #     plugin_name="Recommendation",
     # )
-
-    plugin_dir = "./resources/semantic_kernel/plugins/MovieRecommender"
-    movie_recommender = kernel.add_plugin(
-        plugin_name="recommend_movie",
-        parent_directory=plugin_dir,
-    )
 
     # recommendation = await kernel.invoke(
     #     recommend_function,
@@ -104,6 +99,12 @@ async def main():
     #     ),
     # )
     # print(recommendation)
+
+    plugin_dir = "./resources/semantic_kernel/plugins/MovieRecommender"
+    movie_recommender = kernel.add_plugin(
+        plugin_name="recommend_movie",
+        parent_directory=plugin_dir,
+    )
 
     recommendation_from_seen = await kernel.invoke(
         movie_recommender[
