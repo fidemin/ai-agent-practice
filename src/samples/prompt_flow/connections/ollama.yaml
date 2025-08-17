@@ -1,0 +1,7 @@
+$schema:
+  https://azuremlschemas.azureedge.net/promptflow/latest/ServerlessConnection.schema.json
+type: serverless
+name: ollama
+module: promptflow.connections
+api_base: http://localhost:11434
+api_key: ${env:OLLAMA_API_KEY}

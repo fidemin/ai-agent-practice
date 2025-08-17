@@ -1,0 +1,31 @@
+$schema: https://azuremlschemas.azureedge.net/promptflow/latest/Flow.schema.json
+inputs:
+  chat_history:
+    type: list
+    is_chat_history: true
+    default: []
+  question:
+    type: string
+    is_chat_input: true
+outputs:
+  answer:
+    type: string
+    reference: ${chat.output}
+    is_chat_output: true
+nodes:
+- name: chat
+  type: llm
+  source:
+    type: code
+    path: chat.jinja2
+  inputs:
+    deployment_name: ollama
+    max_tokens: '512'
+    temperature: '0.7'
+    chat_history: ${inputs.chat_history}
+    question: ${inputs.question}
+    model: gpt-oss:20b
+  connection: ollama
+  api: chat
+environment:
+  python_requirements_txt: requirements.txt

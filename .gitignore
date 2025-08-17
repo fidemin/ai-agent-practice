@@ -218,3 +218,10 @@ config_list*.json
 
 # resources/created for created contents by ai
 resources/created
+
+# promptflow
+**/.promptflow/*
+.runs/
+
+# macos
+.DS_Store
